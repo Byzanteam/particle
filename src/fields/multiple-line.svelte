@@ -34,31 +34,31 @@
   </div>
 </div>
 
-<style>
+<style lang="scss">
   * {
     box-sizing: border-box;
   }
 
   .field {
     margin-bottom: 8px;
-  }
 
-  .field__label {
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 500;
-    color: var(--title-color, #6B7885);
-  }
+    &__label {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      color: var(--title-color, #6B7885);
+    }
 
-  .field__description {
-    font-size: 13px;
-    line-height: 20px;
-    color: var(--subtitle-color, #95A4B3);
-  }
+    &__description {
+      font-size: 13px;
+      line-height: 20px;
+      color: var(--subtitle-color, #95A4B3);
+    }
 
-  .field__input-wrapper {
-    margin-top: 9px;
-    margin-bottom: 13px;
+    &__input-wrapper {
+      margin-top: 9px;
+      margin-bottom: 13px;
+    }
   }
 
   textarea {
@@ -72,13 +72,13 @@
     padding: 4px 8px;
     background-color: var(--input-bg-color, #FBFCFF);
     border-radius: var(--input-border-radius, 4px);
-  }
 
-  textarea:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--input-box-shadow-focus-color, rgba(4,191,120,.2));
-    background-color: var(--input-bg-focus-color, white);
-    border-color: var(--input-border-focus-color, #04bf78);
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px var(--input-box-shadow-focus-color, rgba(4,191,120,.2));
+      background-color: var(--input-bg-focus-color, white);
+      border-color: var(--input-border-focus-color, #04bf78);
+    }
   }
 
   ::placeholder {
