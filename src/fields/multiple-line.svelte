@@ -1,14 +1,14 @@
 <!-- custom element tag -->
 <svelte:options tag='jet-multiple-line' />
 
-<script>
-  import dispatchEvent from '../utils/dispatch.js'
+<script lang="ts">
+  import dispatchEvent from '../utils/dispatch'
 
-  export let field;
-  export let value;
-  let root;
+  export let field: string;
+  export let value: string;
+  let root: HTMLElement;
 
-  function updateValue() {
+  function updateValue(): void {
     dispatchEvent(root, 'change', {
       detail: {
         value,
@@ -17,7 +17,7 @@
   }
 
   // computed attribute
-  $: _field = typeof field === 'string' ? JSON.parse(field) : field
+  $: _field = JSON.parse(field)
 </script>
 
 <div bind:this={root} class="field">

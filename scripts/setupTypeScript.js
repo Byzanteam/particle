@@ -43,12 +43,12 @@ const beforeMainJSPath = path.join(projectRoot, "src", "main.js")
 const afterMainTSPath = path.join(projectRoot, "src", "main.ts")
 fs.renameSync(beforeMainJSPath, afterMainTSPath)
 
-// Switch the app.svelte file to use TS
-const appSveltePath = path.join(projectRoot, "src", "App.svelte")
-let appFile = fs.readFileSync(appSveltePath, "utf8")
-appFile = appFile.replace("<script>", '<script lang="ts">')
-appFile = appFile.replace("export let name;", 'export let name: string;')
-fs.writeFileSync(appSveltePath, appFile)
+// // Switch the app.svelte file to use TS
+// const appSveltePath = path.join(projectRoot, "src", "App.svelte")
+// let appFile = fs.readFileSync(appSveltePath, "utf8")
+// appFile = appFile.replace("<script>", '<script lang="ts">')
+// appFile = appFile.replace("export let name;", 'export let name: string;')
+// fs.writeFileSync(appSveltePath, appFile)
 
 // Edit rollup config
 const rollupConfigPath = path.join(projectRoot, "rollup.config.js")
