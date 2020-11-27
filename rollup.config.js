@@ -39,6 +39,7 @@ export default {
 	},
 	plugins: [
 		svelte({
+			// ts, scss preprocessors
 			preprocess: sveltePreprocess(),
 			compilerOptions: {
 				customElement: true,

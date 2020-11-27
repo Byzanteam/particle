@@ -34,7 +34,7 @@ $: _field = JSON.parse(field)
   </div>
 </div>
 
-<style lang="scss">
+<!-- <style lang="scss">
   * {
     box-sizing: border-box;
   }
@@ -84,4 +84,4 @@ $: _field = JSON.parse(field)
   ::placeholder {
     color: var(--placeholder-color, #B7C0CA);
   }
-</style>
+</style> -->
