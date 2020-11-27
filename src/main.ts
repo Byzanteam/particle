@@ -1,5 +1,6 @@
 // auto register svelet:options.tag as component tag
-import './fields/multiple-line.svelte'
+import MultipleLine from './fields/multiple-line.svelte'
+customElements.define('jet-multiple-line', MultipleLine)
 
 /**
  * // for custom elemnt name
