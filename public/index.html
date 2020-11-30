@@ -7,15 +7,19 @@
 	<title>Svelte app</title>
 
 	<link rel='icon' type='image/png' href='/favicon.png'>
-
-	<script defer src='/build/bundle.js'></script>
-	<style>
-		:root {
-			--title-color: #6B7885;
-		}
-	</style>
 </head>
 
 <body>
 </body>
+<script>
+	import('/build/bundle.js').then(({ default: { MultipleLine } }) => {
+		customElements.define('jet-multiple-line', MultipleLine)
+		document.body.innerHTML = `
+			<jet-multiple-line field='{"label": "hehe"}' value="89"></jet-multiple-line>
+		`
+		document.querySelector('jet-multiple-line').addEventListener('change', (event) => {
+			console.log('custom-change-event:', event.detail.value)
+		}, false)
+	})
+</script>
 </html>
