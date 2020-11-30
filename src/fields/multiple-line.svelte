@@ -32,5 +32,7 @@ $: _field = JSON.parse(field)
 </div>
 
 <style lang="postcss">
+  @tailwind base;
+  @tailwind components;
   @tailwind utilities;
 </style>

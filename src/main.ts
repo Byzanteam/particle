@@ -1,5 +1,5 @@
-import MultipleLine from './fields/multiple-line.svelte'
+import MultipleLineField from './fields/multiple-line.svelte'
 
 export default {
-	MultipleLine,
+	MultipleLineField,
 }

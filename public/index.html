@@ -12,12 +12,12 @@
 <body>
 </body>
 <script>
-	import('/build/bundle.js').then(({ default: { MultipleLine } }) => {
-		customElements.define('jet-multiple-line', MultipleLine)
+	import('/build/bundle.js').then(({ default: { MultipleLineField } }) => {
+		customElements.define('jet-multiple-line-field', MultipleLineField)
 		document.body.innerHTML = `
-			<jet-multiple-line field='{"label": "hehe"}' value="89"></jet-multiple-line>
+			<jet-multiple-line-field field='{"label": "hehe"}' value="89"></jet-multiple-line-field>
 		`
-		document.querySelector('jet-multiple-line').addEventListener('change', (event) => {
+		document.querySelector('jet-multiple-line-field').addEventListener('change', (event) => {
 			console.log('custom-change-event:', event.detail.value)
 		}, false)
 	})
