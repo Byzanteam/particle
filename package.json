@@ -1,12 +1,15 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
+  "name": "particle",
+  "version": "0.1.0",
+  "description": "jet web components with svelte and tailwind",
+  "main": "public/build/bundle.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
     "validate": "svelte-check"
   },
+  "repository": "https://github.com/Byzanteam/particle.git",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
@@ -18,14 +21,12 @@
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
+    "sirv-cli": "^1.0.8",
     "svelte": "^3.0.0",
     "svelte-check": "^1.0.0",
     "svelte-preprocess": "^4.0.0",
     "tailwindcss": "^2.0.1",
     "tslib": "^2.0.0",
     "typescript": "^3.9.3"
-  },
-  "dependencies": {
-    "sirv-cli": "^1.0.0"
   }
 }
