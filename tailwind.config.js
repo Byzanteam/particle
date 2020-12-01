@@ -10,4 +10,12 @@ module.exports = {
     ],
     enabled: true
   },
+  corePlugins: {
+    placeholderOpacity: false,
+    textOpacity: false,
+    backgroundOpacity: false,
+    borderOpacity: false,
+    divideOpacity: false,
+    ringOpacity: false,
+  },
 }

@@ -26,6 +26,7 @@ $: _field = JSON.parse(field)
     <textarea
       bind:value
       on:input={updateValue}
+      class="resize-none"
       placeholder="请输入"
     />
   </div>
