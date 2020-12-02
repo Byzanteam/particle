@@ -1,21 +1,11 @@
+import { config, transformConfig } from 'tailwind-config'
+
 module.exports = {
-  theme: {
-    colors: {
-      red: 'black',
-    }
-  },
+  ...transformConfig(config),
   purge: {
     content: [
       "./src/**/*.svelte",
     ],
     enabled: true
-  },
-  corePlugins: {
-    placeholderOpacity: false,
-    textOpacity: false,
-    backgroundOpacity: false,
-    borderOpacity: false,
-    divideOpacity: false,
-    ringOpacity: false,
   },
 }
