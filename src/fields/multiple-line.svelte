@@ -27,7 +27,7 @@ $: _field = JSON.parse(field) as FieldDescriptor
     <textarea
       bind:value
       on:input={updateValue}
-      class="resize-none w-full pt-4px pb-4px pl-8px pr-8px placeholder-gray-4 text-body1 text-gray-1 leading-24 border border-gray-7 rounded-lg focus:border-primary focus:outline-none focus:shadow-6"
+      class="resize-none w-full py-4px px-8px bg-gray-8 hover:bg-white focus:bg-white placeholder-gray-4 text-body1 text-gray-1 leading-24 border border-gray-7 rounded-lg focus:border-primary focus:outline-none focus:shadow-6"
       placeholder="请输入"
     />
   </div>
