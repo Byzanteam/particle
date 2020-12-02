@@ -1,4 +1,5 @@
 <script lang="ts">
+import type { FieldDescriptor } from '../types/field'
 import dispatchEvent from '../utils/dispatch'
 
 export let field: string;
@@ -14,7 +15,7 @@ function updateValue(): void {
 }
 
 // computed attribute
-$: _field = JSON.parse(field)
+$: _field = JSON.parse(field) as FieldDescriptor
 </script>
 
 <div bind:this={root} class="mb-8px last:mb-0">
