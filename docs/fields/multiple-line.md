@@ -5,7 +5,7 @@
 | prop name | type | description | default | required |
 | --- | --- | --- | --- | --- |
 | field | Object | 多行文本字段描述 | null | true |
-| value | Object | 初始值 | '' | false |
+| value | Object | 初始值 | null | false |
 
 ------
 ### Events

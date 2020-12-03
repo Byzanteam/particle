@@ -28,12 +28,12 @@ function updateValue(): void {
   })
 }
 
-function getValue(arr: Array<ProsemirrorNode<any>>): string {
+function extractTextContent(arr: Array<ProsemirrorNode<any>>): string {
   return arr.reduce((acc, item) => {
     if (item.type === 'text') {
       acc += item.content
     } else if (Array.isArray(item.content)) {
-      acc += getValue(item.content)
+      acc += extractTextContent(item.content)
     }
     return acc
   }, '')
@@ -43,7 +43,7 @@ function getValue(arr: Array<ProsemirrorNode<any>>): string {
 $: _field = JSON.parse(field) as MultipleLineField
 $: {
   try {
-    textValue = getValue(JSON.parse(value).content)
+    textValue = extractTextContent(JSON.parse(value).content)
   } catch {
     textValue = value || ''
   }
