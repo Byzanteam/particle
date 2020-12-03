@@ -2,7 +2,7 @@
 import type { MultipleLineField } from '../../types/field'
 import dispatchEvent from '../../utils/dispatch'
 
-export let field: string
+export let field: string | MultipleLineField
 export let value: string = '{"type":"doc","content":[{"type":"plain","content":[{"type":"text","content":""}]}]}'
 let root: HTMLElement
 let textValue: string
@@ -40,7 +40,9 @@ function extractTextContent(arr: Array<ProsemirrorNode<any>>): string {
 }
 
 // computed attribute
-$: _field = JSON.parse(field) as MultipleLineField
+$: _field = typeof field === 'string'
+  ? JSON.parse(field) as MultipleLineField
+  : field
 $: {
   try {
     textValue = extractTextContent(JSON.parse(value).content)
