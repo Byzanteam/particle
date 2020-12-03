@@ -3,6 +3,9 @@
   "include": [
     "src/**/*"
   ],
+  "compilerOptions": {
+    "types": ["jest"]
+  },
   "exclude": [
     "node_modules/*",
     "__sapper__/*",
