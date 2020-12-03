@@ -1,6 +1,6 @@
 <script lang="ts">
-import type { MultipleLineField } from '../types/field'
-import dispatchEvent from '../utils/dispatch'
+import type { MultipleLineField } from '../../types/field'
+import dispatchEvent from '../../utils/dispatch'
 
 export let field: string
 export let value: string = '{"type":"doc","content":[{"type":"plain","content":[{"type":"text","content":""}]}]}'
