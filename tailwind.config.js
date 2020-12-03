@@ -6,10 +6,6 @@ module.exports = {
     ...config,
     corePlugins: {
       ...config.corePlugins,
-      ringWidth: false,
-      ringColor: false,
-      ringOffsetWidth: false,
-      ringOffsetColor: false,
       boxShadow: false,
     },
   }),

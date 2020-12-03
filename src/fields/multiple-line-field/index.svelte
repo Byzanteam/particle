@@ -53,15 +53,15 @@ $: {
 </script>
 
 <div bind:this={root} class="mb-2">
-  <div class="text-gray-2 text-body1">{_field.label}</div>
+  <div class="text-gray-2 text-sm">{_field.label}</div>
   {#if _field.description}
-    <div class="text-body2 text-gray-3">{_field.description}</div>
+    <div class="text-sm text-gray-3">{_field.description}</div>
   {/if}
   <div class="mt-2 mb-3">
     <textarea
       bind:value={textValue}
       on:input={updateValue}
-      class="resize-none w-full py-1 px-2 bg-gray-9 hover:bg-white focus:bg-white placeholder-gray-4 text-body1 text-gray-1 leading-6 border border-gray-7 rounded focus:border-primary focus:outline-none focus:shadow-6"
+      class="resize-none w-full py-1 px-2 bg-gray-9 placeholder-gray-4 text-sm text-gray-1 leading-6 border border-gray-7 rounded hover:bg-white focus:bg-white focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary-lighter"
       placeholder="请输入"
     />
   </div>
