@@ -12,14 +12,28 @@
 <body>
 </body>
 <script>
+  const value = {
+    type: 'doc',
+    content: [
+      {
+        type: 'plain',
+        content: [
+          {
+            type: 'text',
+            content: '89',
+          },
+        ],
+      },
+    ],
+  }
 	import('/build/bundle.js').then(({ default: { MultipleLineField } }) => {
 		customElements.define('jet-multiple-line-field', MultipleLineField)
 		document.body.innerHTML = `
-			<jet-multiple-line-field field='{"label": "hehe"}' value="89"></jet-multiple-line-field>
+			<jet-multiple-line-field field='{"label": "hehe"}' value='${JSON.stringify(value)}'></jet-multiple-line-field>
 		`
 		document.querySelector('jet-multiple-line-field').addEventListener('change', (event) => {
 			console.log('custom-change-event:', event.detail.value)
 		}, false)
-	})
+  })
 </script>
 </html>
