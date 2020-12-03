@@ -2,20 +2,52 @@
 import type { MultipleLineField } from '../types/field'
 import dispatchEvent from '../utils/dispatch'
 
-export let field: string;
-export let value: string;
-let root: HTMLElement;
+export let field: string
+export let value: string = '{"type":"doc","content":[{"type":"plain","content":[{"type":"text","content":""}]}]}'
+let root: HTMLElement
+let textValue: string
 
 function updateValue(): void {
   dispatchEvent(root, 'change', {
     detail: {
-      value,
+      value: {
+        type: 'doc',
+        content: [
+          {
+            type: 'plain',
+            content: [
+              {
+                type: 'text',
+                content: textValue,
+              },
+            ],
+          },
+        ],
+      },
     }
   })
 }
 
+function getValue(arr: Array<ProsemirrorNode<any>>): string {
+  return arr.reduce((acc, item) => {
+    if (item.type === 'text') {
+      acc += item.content
+    } else if (Array.isArray(item.content)) {
+      acc += getValue(item.content)
+    }
+    return acc
+  }, '')
+}
+
 // computed attribute
 $: _field = JSON.parse(field) as MultipleLineField
+$: {
+  try {
+    textValue = getValue(JSON.parse(value).content)
+  } catch {
+    textValue = value || ''
+  }
+}
 </script>
 
 <div bind:this={root} class="mb-8">
@@ -25,7 +57,7 @@ $: _field = JSON.parse(field) as MultipleLineField
   {/if}
   <div class="mt-9 mb-13">
     <textarea
-      bind:value
+      bind:value={textValue}
       on:input={updateValue}
       class="resize-none w-full py-4 px-8 bg-gray-9 hover:bg-white focus:bg-white placeholder-gray-4 text-body1 text-gray-1 leading-normal border border-gray-7 rounded-lg focus:border-primary focus:outline-none focus:shadow-6"
       placeholder="请输入"
