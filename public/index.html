@@ -26,14 +26,26 @@
       },
     ],
   }
-	import('/build/bundle.js').then(({ default: { MultipleLineField } }) => {
-		customElements.define('jet-multiple-line-field', MultipleLineField)
+  const defaultFiles = [{
+    objectUuid: '3',
+    filename: 'm.jpg',
+  }]
+	import('/build/bundle.js').then(({ default: { MultipleLineField, FileField } }) => {
+    customElements.define('jet-multiple-line-field', MultipleLineField)
+    customElements.define('jet-file-field', FileField)
 		document.body.innerHTML = `
-			<jet-multiple-line-field field='{"label": "hehe"}' value='${JSON.stringify(value)}'></jet-multiple-line-field>
+      <jet-multiple-line-field field='{"label": "hehe"}' value='${JSON.stringify(value)}'></jet-multiple-line-field>
+      <jet-file-field maxcount="5" value='${JSON.stringify(defaultFiles)}'>
+        <span class="file-btn">请选择</span>
+      </jet-file-field>
 		`
 		document.querySelector('jet-multiple-line-field').addEventListener('change', (event) => {
 			console.log('custom-change-event:', event.detail.value)
-		}, false)
+    }, false)
+
+    document.querySelector('.file-btn').addEventListener('click', () => {
+      document.querySelector('jet-file-field').openFilePickerDialog()
+    }, false)
   })
 </script>
 </html>
