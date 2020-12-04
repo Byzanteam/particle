@@ -3,7 +3,7 @@ export enum FieldType {
 }
 
 export interface FieldDescriptor {
-  type: FieldType
+  fieldType: FieldType
   description?: string
   label: string
 }

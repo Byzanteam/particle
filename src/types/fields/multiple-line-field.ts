@@ -1,6 +1,6 @@
 import type { FieldDescriptor, FieldType } from './field'
 export interface MultipleLineFieldDescriptor extends FieldDescriptor {
-  type: FieldType.MULTIPLE_LINE_FIELD
+  fieldType: FieldType.MULTIPLE_LINE_FIELD
 }
 
 export interface ProsemirrorNode {
