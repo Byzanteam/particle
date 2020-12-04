@@ -44,7 +44,7 @@ test("should render intial value", () => {
   })
   const textarea = getByPlaceholderText('请输入');
 
-  (expect(textarea) as any).toHaveDisplayValue('rich text value')
+  expect(textarea).toHaveDisplayValue('rich text value')
 })
 
 test("should render intial string value", () => {
@@ -61,5 +61,5 @@ test("should render intial string value", () => {
 
   const textarea = getByPlaceholderText('请输入');
 
-  (expect(textarea) as any).toHaveDisplayValue('a string value')
+  expect(textarea).toHaveDisplayValue('a string value')
 })
