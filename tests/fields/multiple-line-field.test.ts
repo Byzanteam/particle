@@ -11,7 +11,7 @@ test("should render label", () => {
   const { getByText } = render(MultipleLineField, {
     props: {
       field: testField,
-      value: null,
+      value: '',
     }
   })
 

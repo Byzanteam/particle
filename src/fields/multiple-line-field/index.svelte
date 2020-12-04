@@ -1,9 +1,12 @@
 <script lang="ts">
-import type { MultipleLineField } from '../../types/field'
+import type {
+  MultipleLineFieldDescriptor,
+  ProsemirrorNode,
+} from '../../types'
 import dispatchEvent from '../../utils/dispatch'
 
-export let field: string | MultipleLineField
-export let value: string = '{"type":"doc","content":[{"type":"plain","content":[{"type":"text","content":""}]}]}'
+export let field: string | MultipleLineFieldDescriptor
+export let value: string
 let root: HTMLElement
 let textValue: string
 
@@ -28,7 +31,7 @@ function updateValue(): void {
   })
 }
 
-function extractTextContent(arr: Array<ProsemirrorNode<any>>): string {
+function extractTextContent(arr: Array<ProsemirrorNode>): string {
   return arr.reduce((acc, item) => {
     if (item.type === 'text') {
       acc += item.content
@@ -41,7 +44,7 @@ function extractTextContent(arr: Array<ProsemirrorNode<any>>): string {
 
 // computed attribute
 $: _field = typeof field === 'string'
-  ? JSON.parse(field) as MultipleLineField
+  ? JSON.parse(field) as MultipleLineFieldDescriptor
   : field
 $: {
   try {
