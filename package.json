@@ -17,7 +17,7 @@
     "@tsconfig/svelte": "^1.0.0",
     "@types/prosemirror-model": "^1.11.1",
     "autoprefixer": "^10.0.3",
-    "postcss": "^8.1.10",
+    "postcss": "^8.2.10",
     "rollup": "^2.3.4",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
